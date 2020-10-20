@@ -11,19 +11,6 @@ class AddTodo extends React.Component{
         });
     }
 
-//     validateFn = (inputText) =>{
-//         let regex = /^(?=.*[0-9])(?=.*[a-zA-Z)(?=.*[a-zA-Z0-9]+)$/;
-
-//         if(inputText.match(regex)){
-//             inputText.replace(regex, '')
-//             return inputText
-//         }
-//       else {
-//           alert("hi")
-//       }
-// }
-
-
     handleSubmit = (e) => {  
         e.preventDefault();
         this.props.addTodo(this.state);

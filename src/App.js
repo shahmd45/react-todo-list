@@ -12,7 +12,7 @@ class App extends React.Component {
   } 
 
  deleteTodo = (id) => {
-    const todos = this.state.todos.filter(todo =>{
+    const todos = this.state.todos.filter(todo => {
       return todo.id !== id
     });
 
