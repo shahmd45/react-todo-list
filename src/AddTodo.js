@@ -5,42 +5,39 @@ class AddTodo extends React.Component{
         content : ''
     }
 
-handleChange = (e) => {
-    console.log(e)
-
+    handleChange = (e) => {
         this.setState({
             content : e.target.value
-        })
+        });
     }
 
-validateFn = (inputText) =>{
-    console.log(inputText)
-        let regex = /^(?=.*[0-9])(?=.*[a-zA-Z)(?=.*[a-zA-Z0-9]+)$/;
+//     validateFn = (inputText) =>{
+//         let regex = /^(?=.*[0-9])(?=.*[a-zA-Z)(?=.*[a-zA-Z0-9]+)$/;
 
-        if(inputText.match(regex)){
-            inputText.replace(regex, '')
-            return inputText
-        }
-      else {
-          alert("hi")
-      }
-}
+//         if(inputText.match(regex)){
+//             inputText.replace(regex, '')
+//             return inputText
+//         }
+//       else {
+//           alert("hi")
+//       }
+// }
 
 
-handleSubmit = (e) => {
-  
-    e.preventDefault();
+    handleSubmit = (e) => {  
+        e.preventDefault();
         this.props.addTodo(this.state);
         this.setState({
             content : ''
-        })
+        });
     }
-    render (){
+
+    render () {
         return (
             <div>
-                <form onSubmit ={ this.handleSubmit }>
+                <form onSubmit={ this.handleSubmit } >
                     <label> Add new Todo: </label>
-                    <input type= "text" onChange = { this.handleChange } value = {this.state.content}/>
+                    <input type="text" onChange={ this.handleChange } value={ this.state.content } />
                 </form>
             </div>
         );
